@@ -8,18 +8,15 @@ async function main() {
 
   // Connect to the deployed contract
   const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-  const contract = await lock.attach(contractAddress);
+  const contract = lock.attach(contractAddress);
 
   // Display deployment info
   console.log("Contract Deployed at Address: ", contract.address);
 
-  let transaction = await contract.withdraw();
+  const transaction = await contract.withdraw();
 
-  let transactionReceipt = await transaction.wait({
-    confirmations: 5
-  });
+  const transactionReceipt = await transaction.wait();
 
-  console.log("Transaction Receipt: ");
   console.log(transactionReceipt);
 }
 
