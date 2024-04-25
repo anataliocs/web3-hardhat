@@ -1,7 +1,8 @@
 {
   "name": "hardhat-project",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.1",
+    "@nomicfoundation/hardhat-toolbox": "5.0.0",
     "hardhat": "^2.22.3"
   }
 }
