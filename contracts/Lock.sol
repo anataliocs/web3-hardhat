@@ -4,9 +4,7 @@ pragma solidity ^0.8.9;
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
-import "@openzeppelin/contracts/access/IAccessControl.sol";
-
-contract Lock is IAccessControl {
+contract Lock {
     uint public unlockTime;
     address payable public owner;
 
@@ -33,22 +31,4 @@ contract Lock is IAccessControl {
 
         owner.transfer(address(this).balance);
     }
-
-    function hasRole(
-        bytes32 role,
-        address account
-    ) external view override returns (bool) {}
-
-    function getRoleAdmin(
-        bytes32 role
-    ) external view override returns (bytes32) {}
-
-    function grantRole(bytes32 role, address account) external override {}
-
-    function revokeRole(bytes32 role, address account) external override {}
-
-    function renounceRole(
-        bytes32 role,
-        address callerConfirmation
-    ) external override {}
 }
