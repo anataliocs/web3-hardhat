@@ -9,7 +9,7 @@ async function main() {
 
     const contract = lock.attach(contractAddress);
 
-    console.log("Contract deployed at Address: ", contract.address);
+    console.log("Contract deployed at Address: ", contract.target);
 
     const transaction = await contract.withdraw();
 
