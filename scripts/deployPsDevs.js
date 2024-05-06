@@ -8,12 +8,13 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const PsDevsContract = await hre.ethers.getContractFactory("PsDevs");
-  const psDevs = await PsDevsContract.deploy("http://localhost/");
+
+  const psDevsContracts = await hre.ethers.getContractFactory("PsDevs");
+  const psDevs = await psDevsContracts.deploy("");
 
   await psDevs.waitForDeployment();
 
-  console.log(`PsDevs deployed to ${psDevs.target}`);
+  console.log(`Https://sepolia.etherscan.io/address/${psDevs.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
